@@ -10,14 +10,14 @@ apt-get -y install haproxy
 # edit config file
 server_config=\
 "
-frontend levi-frontend
+frontend emmanuella-frontend
         bind *:80
         mode http
-        default_backend levi-backend
-backend levi-backend
+        default_backend emmanuella-backend
+backend emmanuella-backend
         balance roundrobin
-        server 6302-web-01 44.220.158.41:80 check
-        server 6302-web-02 54.167.83.40:80 check
+        server 7062-web-01 52.87.156.155:80 check
+        server 7062-web-02 3.83.129.106:80 check
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
